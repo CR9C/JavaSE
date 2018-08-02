@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--新建一个后缀叫dtd的xml文件,写入一下内容-->
+<!-- 标签名称 (规范) -->
+<!ELEMENT contacts (linkman*)>
+<!-- 有序标签 -->
+<!ELEMENT linkman (name,email,address,group)>
+<!-- 标签名称(需要解析的字符数据) -->
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT address (#PCDATA)>
+<!ELEMENT group (#PCDATA)>
+<!-- 标签名 属性名称 属性类型 默认值  -->
+<!--
+    ID  表示唯一
+    #REQUIRED 表示必填
+-->
+<!ATTLIST linkman id ID #REQUIRED>
+

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    xmlns 当前XML的名称空间 随便写唯一
+    xmlns:xs 当前XML中标签来自哪
+    targetNamespace 目标文档的名称空间
+ -->
+<xs:schema xmlns="www.seemygo.com" 
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="www.520it.com" 
+    elementFormDefault="qualified">
+    <!-- 元素的名称 -->
+    <xs:element name="contacts">
+        <!-- 元素类型复杂类型 -->
+        <xs:complexType>
+            <!-- 有顺序的 -->
+            <xs:sequence>
+                <!-- 
+                    minOccurs 最少出现次数
+                    unbounded 没有限制
+                -->
+                <xs:element name="linkman" minOccurs="0" maxOccurs="unbounded" >
+                    <xs:complexType> 
+                        <xs:sequence>
+                            <!-- type 表示元素的类型 -->
+                                <xs:element name="name" type="xs:string"/>
+                                <xs:element name="email" type="xs:string"/>
+                                <xs:element name="address" type="xs:string"/>
+                                <xs:element name="group" type="xs:string"/>
+                        </xs:sequence>
+                        <!-- user元素上的属性 -->
+                        <xs:attribute name="id" type="xs:ID" use="required"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
